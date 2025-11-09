@@ -74,7 +74,13 @@ $('.block').click(function (e) {
 
 
 $('.start').click( function (e) {
-    const userName = window.prompt("Please enter your name:");
+    let userName;
+    if($('html').attr("lang") === 'ar'){
+        userName = window.prompt("اسمك:");
+    }
+    else if($('html').attr("lang") === 'en'){
+        userName = window.prompt("Please enter your name:");
+    }
     if(userName){
         $(".hello .name").text(userName)
     }
